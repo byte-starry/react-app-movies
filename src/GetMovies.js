@@ -26,9 +26,11 @@ const Movies = () => {
       navigate('/add');
     };
 
+
+
   return (
-    <>
-    <div>
+    <><table id='movieTable'>
+    {/* <div>
     {data && (
               <ul>
                   {data.map((item, index) => (
@@ -36,28 +38,34 @@ const Movies = () => {
                   ))}
               </ul>
           )}
-    </div>
-    <div>
-          {data && (
-              <ul>
-                  {data.map((item, index) => (
-                      <li key={index}>{item.title}</li>
-                  ))}
-              </ul>
-          )}
-    </div>
-    <div>     
-            {data && (
-              <ul>
-                  {data.map((item, index) => (
-                      <li key={index}>{item.rating}</li>
-                  ))}
-              </ul>
-          )}
-    </div>
+    </div> */}
+   <thead>
+    <tr>
+      <th>TITLE</th>
+      <th>RATING</th>
+      <th>DELETE</th>
+      <th>UPDATE</th>
+    </tr>
+   </thead>
+   <tbody>
+   {data &&
+            data.map((item, index) => (
+              <tr key={index}>
+                <td>{item.title}</td>
+                <td>{item.rating}</td>
+                <td>
+                  <button >Delete</button>
+                </td>
+                <td><button>Update</button></td>
+              </tr>
+            ))}
+          
+    </tbody>
+    </table>
     <div>
       <button onClick={navigateAdd}>Add Movie</button>
     </div>
+    
     </>
   );
 };
