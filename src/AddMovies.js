@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import './index.css'
 
 const AddMovies = () => {
   const [formData, setFormData] = useState({
@@ -50,16 +51,16 @@ const AddMovies = () => {
       <form onSubmit={handleSubmit}>
         <label>
           Title:
-          <input type="text" name="title" value={formData.title} onChange={handleInputChange}/>
+          <input type="text" name="title" required value={formData.title} onChange={handleInputChange}/>
         </label>
         <label>
           Rating:
-          <input type="text" name="rating" value={formData.rating} onChange={handleInputChange}/>
+          <input type="text" name="rating" required value={formData.rating} onChange={handleInputChange}/>
         </label>
-        <button type="submit">Submit</button>
+        <button className="add-submit-btn" type="submit">Submit</button>
       </form>
       <div>
-        <button onClick={navigateGet}>Movies List</button>
+        <button className = "movie-list-btn" onClick={navigateGet}>Back</button>
       </div>
     </>
   );
